@@ -1,1 +1,6 @@
-openai>=1.40.0\npandas>=2.1.0\nopenpyxl>=3.1.0\nnbformat>=5.9.0\npypdf>=4.0.0\npython-docx>=1.1.0\n
+openai>=1.40.0
+pandas>=2.1.0
+openpyxl>=3.1.0
+nbformat>=5.9.0
+pypdf>=4.0.0
+python-docx>=1.1.0
