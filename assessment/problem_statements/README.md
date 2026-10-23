@@ -1,0 +1,1 @@
+Add each approved project/case-study problem statement here, then set its relative path in `evaluator/config.json`. Supported formats include DOCX, PDF, TXT, and Markdown.

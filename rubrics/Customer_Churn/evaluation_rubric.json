@@ -1,0 +1,32 @@
+{
+  "project_id": "Customer_Churn",
+  "milestone_id": "Full_Project",
+  "total_marks": 100,
+  "criteria": [
+    {
+      "name": "Problem Understanding & Data Quality",
+      "max_marks": 20,
+      "guidance": "Assess problem framing, target definition, data structure, and data quality."
+    },
+    {
+      "name": "EDA & Feature Engineering",
+      "max_marks": 20,
+      "guidance": "Assess analysis, visualization, cleaning, encoding, and feature engineering."
+    },
+    {
+      "name": "Model Development",
+      "max_marks": 25,
+      "guidance": "Assess algorithm choice, pipeline, split strategy, and leakage avoidance."
+    },
+    {
+      "name": "Evaluation & Business Interpretation",
+      "max_marks": 20,
+      "guidance": "Assess suitable metrics, validation, interpretation, and recommendations."
+    },
+    {
+      "name": "Reproducibility & Communication",
+      "max_marks": 15,
+      "guidance": "Assess code organization, clarity, limitations, and reproducibility evidence."
+    }
+  ]
+}
