@@ -1,0 +1,1 @@
+Sample participant submission for testing only. Contains a synthetic Loan Default Milestone 1 notebook. Not real student work and not suitable for lending decisions. Upload Milestone_1.ipynb under submission/Participant_001/ in your repository.
