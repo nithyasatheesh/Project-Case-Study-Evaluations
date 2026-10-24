@@ -1,0 +1,32 @@
+{
+  "project_id": "Retail_Sales_Forecasting",
+  "milestone_id": "Milestone_2",
+  "total_marks": 100,
+  "criteria": [
+    {
+      "name": "ML Model Development",
+      "max_marks": 25,
+      "guidance": "Build suitable regression models using calendar, lag and rolling features that only use past information."
+    },
+    {
+      "name": "Hyperparameter Tuning & Validation",
+      "max_marks": 20,
+      "guidance": "Use chronological or rolling validation; do not shuffle time series or tune against the final holdout."
+    },
+    {
+      "name": "Model Comparison & Performance Evaluation",
+      "max_marks": 20,
+      "guidance": "Compare models and simple baselines on the same horizon using MAE/RMSE/sMAPE and relevant group breakdowns."
+    },
+    {
+      "name": "Feature Importance & Residual Analysis",
+      "max_marks": 15,
+      "guidance": "Inspect feature importance and residual patterns by time/store/item without making causal claims."
+    },
+    {
+      "name": "Forecast Segmentation & Business Interpretation",
+      "max_marks": 20,
+      "guidance": "Evaluate forecasts across store/item groups and explain operational implications with measured evidence."
+    }
+  ]
+}
