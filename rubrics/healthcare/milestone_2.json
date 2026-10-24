@@ -1,0 +1,32 @@
+{
+  "project_id": "Healthcare_Liver_Disease",
+  "milestone_id": "Milestone_2",
+  "total_marks": 100,
+  "criteria": [
+    {
+      "name": "ML Model Development",
+      "max_marks": 25,
+      "guidance": "Implement suitable classification models and consistent preprocessing for the liver status target."
+    },
+    {
+      "name": "Hyperparameter Tuning & Validation",
+      "max_marks": 20,
+      "guidance": "Use stratified cross-validation or an appropriate validation strategy without test leakage."
+    },
+    {
+      "name": "Model Comparison & Performance Evaluation",
+      "max_marks": 20,
+      "guidance": "Compare models using class-sensitive metrics and explain the trade-offs, especially recall and false negatives."
+    },
+    {
+      "name": "Risk Factor / Feature Importance Analysis",
+      "max_marks": 15,
+      "guidance": "Explain feature contributions with appropriate methods; do not imply causation or clinical validity."
+    },
+    {
+      "name": "Risk Scoring & Patient Grouping",
+      "max_marks": 20,
+      "guidance": "If producing risk scores or groups, validate calibration and explain thresholds as illustrative unless clinically validated."
+    }
+  ]
+}
