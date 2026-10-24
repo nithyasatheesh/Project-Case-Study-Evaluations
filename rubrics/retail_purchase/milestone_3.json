@@ -1,0 +1,32 @@
+{
+  "project_id": "Retail_Customer_Purchase",
+  "milestone_id": "Milestone_3",
+  "total_marks": 100,
+  "criteria": [
+    {
+      "name": "Neural Network Design & Implementation",
+      "max_marks": 25,
+      "guidance": "Build an appropriate neural-network regression model with sensible architecture and reproducible training."
+    },
+    {
+      "name": "Data Preparation & Training",
+      "max_marks": 20,
+      "guidance": "Prepare features correctly, fit preprocessing on training data only, and use validation/early stopping or regularization."
+    },
+    {
+      "name": "Model Evaluation & Overfitting Analysis",
+      "max_marks": 20,
+      "guidance": "Evaluate on held-out data, compare train/validation behaviour, and diagnose overfitting."
+    },
+    {
+      "name": "ML vs DL Comparison",
+      "max_marks": 15,
+      "guidance": "Compare neural network and best ML baseline on the same holdout and consistent metrics."
+    },
+    {
+      "name": "NLP Implementation & Findings",
+      "max_marks": 20,
+      "guidance": "Use Customer_Reviews text for a clearly defined text task; describe preprocessing and provide valid evaluation or qualitative evidence."
+    }
+  ]
+}
