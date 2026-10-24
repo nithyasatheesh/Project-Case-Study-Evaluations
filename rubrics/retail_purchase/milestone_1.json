@@ -1,0 +1,32 @@
+{
+  "project_id": "Retail_Customer_Purchase",
+  "milestone_id": "Milestone_1",
+  "total_marks": 100,
+  "criteria": [
+    {
+      "name": "Data Understanding & Quality Checks",
+      "max_marks": 20,
+      "guidance": "Inspect the supplied demographic, purchase and review datasets; validate schema, keys, duplicates, missingness, target and join cardinality."
+    },
+    {
+      "name": "Exploratory Data Analysis (EDA)",
+      "max_marks": 20,
+      "guidance": "Use appropriate univariate/bivariate analysis and plots to explain purchase patterns by customer and product categories."
+    },
+    {
+      "name": "Data Cleaning & Feature Engineering",
+      "max_marks": 20,
+      "guidance": "Justify missing-value handling, categorical encoding, feature creation and leakage prevention; retain appropriate records."
+    },
+    {
+      "name": "Regression Baseline",
+      "max_marks": 20,
+      "guidance": "Build a valid regression baseline for Purchase with train/test separation and preprocessing fitted on training data."
+    },
+    {
+      "name": "Evaluation & Findings",
+      "max_marks": 20,
+      "guidance": "Report MAE, RMSE and R², interpret errors and findings, and state limitations without unsupported business claims."
+    }
+  ]
+}
