@@ -6,7 +6,7 @@
   "default_milestone": "Milestone_1",
   "projects": {
     "Loan_Default": {
-      "problem_statement": "assessment/problem_statements/Loan_Default.docx",
+      "problem_statement": "problem_statements/Loan_Default.md",
       "rubrics": {
         "Milestone_1": "rubrics/Loan_Default/milestone_1_rubric.json",
         "Milestone_2": "rubrics/Loan_Default/milestone_2_rubric.json",
