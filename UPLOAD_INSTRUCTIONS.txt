@@ -1,0 +1,8 @@
+HOW TO TEST
+1. Open your GitHub repository.
+2. Open lowercase submission/ (rename/create it if your current folder is Submission/ with capital S).
+3. Upload the three participant folders from this pack into submission/.
+4. Commit the upload.
+5. Open Actions and check the latest Evaluate Participant Submissions run.
+6. The workbook Participant_Feedback_Register.xlsx is a format/template. Automatic append/update requires the evaluator's report generator to write to this same column layout and upload it as an artifact.
+Do not upload real learner submissions to a public repository. Make the repository private or use anonymized test files.
