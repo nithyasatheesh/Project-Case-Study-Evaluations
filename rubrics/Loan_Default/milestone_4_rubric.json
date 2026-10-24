@@ -2,6 +2,31 @@
   "project_id": "Loan_Default",
   "milestone_id": "Milestone_4",
   "total_marks": 100,
-  "criteria": [],
-  "status": "TODO: Add the approved five-criterion rubric before using this milestone."
+  "criteria": [
+    {
+      "name": "LLM Explanations & Prompt Engineering",
+      "max_marks": 20,
+      "guidance": "Use well-designed prompts to explain validated model outputs while distinguishing prediction from fact and avoiding unsupported claims."
+    },
+    {
+      "name": "RAG: Ingestion/Retrieval/Grounding",
+      "max_marks": 20,
+      "guidance": "Demonstrate document ingestion, chunking, retrieval and grounded answers with source citations."
+    },
+    {
+      "name": "Text-to-SQL & Query Safety",
+      "max_marks": 20,
+      "guidance": "Generate schema-aware read-only SQL, validate queries and reject writes, destructive statements and multiple statements."
+    },
+    {
+      "name": "AI Agent Orchestration",
+      "max_marks": 20,
+      "guidance": "Demonstrate meaningful routing and coordination among data, retrieval and explanation tools with error handling."
+    },
+    {
+      "name": "Evaluation & Responsible AI",
+      "max_marks": 20,
+      "guidance": "Evaluate grounding, prompt injection, privacy, fairness, uncertainty and safe use; document test evidence and limitations."
+    }
+  ]
 }
