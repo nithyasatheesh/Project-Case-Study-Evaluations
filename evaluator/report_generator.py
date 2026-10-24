@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 import pandas as pd
 
@@ -61,10 +62,13 @@ def write_reports(result, source_file, output_dir):
 
 def _participant_name(source_file):
     p = Path(source_file)
-    # Expected layout: submission/Participant_Name/Milestone_1.ipynb
-    if len(p.parts) >= 3 and p.parts[0].lower() == "submission":
+    if len(p.parts) >= 3 and p.parts[0].lower() == 'submission':
         return p.parts[1]
-    return p.stem
+    stem = p.stem
+    match = re.match(r'(Participant[_ -][A-Za-z0-9]+(?:[_ -][A-Za-z0-9]+)?)', stem, re.IGNORECASE)
+    if match:
+        return match.group(1).replace(' ', '_').replace('-', '_')
+    return stem
 
 def _as_text(value):
     if isinstance(value, (list, tuple)):
