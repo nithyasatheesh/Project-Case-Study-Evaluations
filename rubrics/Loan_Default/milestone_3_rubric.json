@@ -2,6 +2,31 @@
   "project_id": "Loan_Default",
   "milestone_id": "Milestone_3",
   "total_marks": 100,
-  "criteria": [],
-  "status": "TODO: Add the approved five-criterion rubric before using this milestone."
+  "criteria": [
+    {
+      "name": "Neural Network Design & Implementation",
+      "max_marks": 25,
+      "guidance": "Implement an appropriate neural network for the defined loan default prediction task with documented architecture."
+    },
+    {
+      "name": "Data Preparation & Training",
+      "max_marks": 20,
+      "guidance": "Apply appropriate encoding/scaling, training-validation split and leakage prevention; document training choices."
+    },
+    {
+      "name": "Model Evaluation & Overfitting Analysis",
+      "max_marks": 20,
+      "guidance": "Evaluate on held-out data, compare train/validation performance and discuss overfitting and class-sensitive errors."
+    },
+    {
+      "name": "ML vs DL Comparison",
+      "max_marks": 15,
+      "guidance": "Compare the neural network against a selected ML model on the same holdout using consistent metrics."
+    },
+    {
+      "name": "NLP Implementation & Findings",
+      "max_marks": 20,
+      "guidance": "Implement a defined NLP task relevant to the project materials; show evidence and valid evaluation without inventing labels or metrics."
+    }
+  ]
 }
