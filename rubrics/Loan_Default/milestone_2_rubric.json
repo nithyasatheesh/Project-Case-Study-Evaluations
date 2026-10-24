@@ -2,6 +2,31 @@
   "project_id": "Loan_Default",
   "milestone_id": "Milestone_2",
   "total_marks": 100,
-  "criteria": [],
-  "status": "TODO: Add the approved five-criterion rubric before using this milestone."
+  "criteria": [
+    {
+      "name": "ML Model Development",
+      "max_marks": 25,
+      "guidance": "Implement suitable classification models for loan default prediction with reproducible preprocessing and train/test separation."
+    },
+    {
+      "name": "Hyperparameter Tuning & Validation",
+      "max_marks": 20,
+      "guidance": "Tune selected model parameters using appropriate cross-validation on training data only; avoid test leakage."
+    },
+    {
+      "name": "Model Comparison & Performance Evaluation",
+      "max_marks": 20,
+      "guidance": "Compare models using consistent metrics including precision, recall, F1 and ROC-AUC where appropriate; interpret class imbalance."
+    },
+    {
+      "name": "Risk Factor / Feature Importance Analysis",
+      "max_marks": 15,
+      "guidance": "Explain influential features with valid importance/explanation methods and distinguish association from causation."
+    },
+    {
+      "name": "Clustering & Borrower Segmentation",
+      "max_marks": 20,
+      "guidance": "Create defensible borrower segments from suitable features, scale where needed, assess cluster quality and interpret segments carefully."
+    }
+  ]
 }
