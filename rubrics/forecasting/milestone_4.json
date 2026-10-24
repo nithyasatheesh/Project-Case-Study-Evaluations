@@ -1,0 +1,32 @@
+{
+  "project_id": "Retail_Sales_Forecasting",
+  "milestone_id": "Milestone_4",
+  "total_marks": 100,
+  "criteria": [
+    {
+      "name": "LLM Explanations & Prompt Engineering",
+      "max_marks": 20,
+      "guidance": "Summarize validated forecast results with horizon, uncertainty and source metrics; do not invent business impact."
+    },
+    {
+      "name": "RAG: Ingestion/Retrieval/Grounding",
+      "max_marks": 20,
+      "guidance": "Retrieve from approved forecasting documentation with source metadata and grounded responses."
+    },
+    {
+      "name": "Text-to-SQL & Query Safety",
+      "max_marks": 20,
+      "guidance": "Convert questions to schema-aware read-only SQL, reject unsafe statements and validate date filters."
+    },
+    {
+      "name": "AI Agent Orchestration",
+      "max_marks": 20,
+      "guidance": "Coordinate forecast/data query, retrieval and summary tools with explicit routing and traceable outputs."
+    },
+    {
+      "name": "Evaluation & Responsible AI",
+      "max_marks": 20,
+      "guidance": "Test grounding, time-period correctness, prompt injection, privacy and unsupported claims; document failure cases."
+    }
+  ]
+}
