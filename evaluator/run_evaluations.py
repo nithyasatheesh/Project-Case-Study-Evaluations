@@ -88,11 +88,20 @@ def discover_submissions(files_from=None):
         Path("Submission-Milestone4"),
     ]
     found = set()
+    ignored_names = {"readme.txt", "readme.md", ".gitkeep", "upload_instructions.txt"}
     for root in roots:
         if root.exists():
             for p in root.rglob("*"):
-                if p.is_file() and (p.suffix.lower() in SUPPORTED or p.suffix.lower() == ".zip"):
-                    found.add(p)
+                if not p.is_file():
+                    continue
+                if p.name.lower() in ignored_names:
+                    continue
+                if p.suffix.lower() not in SUPPORTED and p.suffix.lower() != ".zip":
+                    continue
+                # A plain README or instructions file is not a participant submission.
+                if p.suffix.lower() == ".txt" and p.stem.lower() in {"readme", "instructions", "upload_instructions"}:
+                    continue
+                found.add(p)
     # Keep files-from as a fallback for repositories with a custom submission root.
     if not found and files_from and Path(files_from).exists():
         for line in Path(files_from).read_text(encoding="utf-8").splitlines():
