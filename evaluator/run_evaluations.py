@@ -41,6 +41,13 @@ def choose_project_milestone(path, config):
 
     # Existing legacy submissions under the participant structure belong to Loan Default
     # only when the notebook itself or parent path indicates that project.
+    if project is None and path.parts and path.parts[0].lower() == "submission":
+        # Backward compatibility: the original participant/Milestone_N layout is Loan Default
+        # unless another project is explicitly identified in the notebook content.
+        default_project = config.get("default_project", "Loan_Default")
+        if default_project in project_configs:
+            project = default_project
+
     if project is None:
         raise ValueError(
             f"Cannot identify project for '{path}'. Put a project keyword/title in the filename "
