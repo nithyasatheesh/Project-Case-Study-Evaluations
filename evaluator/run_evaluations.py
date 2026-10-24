@@ -10,48 +10,59 @@ from evaluator.core import SUPPORTED, collect_submission, evaluate, load_problem
 from evaluator.report_generator import write_reports
 
 PROJECT_ALIASES = [
-    (("retail_purchase", "retail_customer_purchase", "customer purchase intelligence", "user_product_purchase_details"), "Retail_Customer_Purchase"),
-    (("healthcare", "liver_disease", "liver disease", "liver patient dataset"), "Healthcare_Liver_Disease"),
-    (("forecasting", "sales_forecasting", "retail sales forecasting", "retail_data.csv"), "Retail_Sales_Forecasting"),
-    (("loan_default", "loandefault", "loan default", "default prediction"), "Loan_Default"),
+    (("retail_purchase", "retail_customer_purchase", "customer purchase intelligence", "user_product_purchase_details", "purchase prediction", "customer purchase"), "Retail_Customer_Purchase"),
+    (("healthcare", "liver_disease", "liver disease", "liver patient dataset", "medical diagnosis", "patient risk"), "Healthcare_Liver_Disease"),
+    (("forecasting", "sales_forecasting", "retail sales forecasting", "retail_data.csv", "time series forecast", "sales prediction"), "Retail_Sales_Forecasting"),
+    (("loan_default", "loandefault", "loan default", "default prediction", "credit risk", "loan risk"), "Loan_Default"),
 ]
 
 def choose_project_milestone(path, config):
-    path_text = path.as_posix().lower().replace("-", "_")
-    filename = path.stem.lower().replace("-", "_")
+    path_text = path.as_posix().lower().replace("-", "_").replace(" ", "_")
+    filename = path.stem.lower().replace("-", "_").replace(" ", "_")
     project_configs = config.get("projects", {})
     project = None
 
-    # Prefer the project name in the file/folder path.
-    for keywords, configured_name in PROJECT_ALIASES:
-        if configured_name in project_configs and any(k in filename or k in path_text for k in keywords):
+    # First, match explicit configured project names in the folder path or filename.
+    for configured_name in project_configs:
+        normalized = configured_name.lower().replace("-", "_").replace(" ", "_")
+        if normalized in path_text or normalized in filename:
             project = configured_name
             break
 
-    # If not found, inspect notebook/source text for project-specific evidence.
+    # Then match project-specific aliases in the path or filename.
+    if project is None:
+        for keywords, configured_name in PROJECT_ALIASES:
+            if configured_name in project_configs and any(k.replace(" ", "_") in path_text or k.replace(" ", "_") in filename for k in keywords):
+                project = configured_name
+                break
+
+    # Finally inspect notebook/source text for explicit project title or project-specific clues.
     if project is None and path.suffix.lower() in {".ipynb", ".py", ".md", ".txt", ".json", ".html"}:
         try:
-            sample = path.read_text(encoding="utf-8", errors="replace")[:30000].lower()
-            for keywords, configured_name in PROJECT_ALIASES:
-                if configured_name in project_configs and any(k in sample for k in keywords):
+            sample = path.read_text(encoding="utf-8", errors="replace")[:50000].lower().replace("-", "_")
+            for configured_name in project_configs:
+                name_terms = configured_name.lower().replace("-", "_").replace(" ", "_")
+                if name_terms in sample:
                     project = configured_name
                     break
+            if project is None:
+                for keywords, configured_name in PROJECT_ALIASES:
+                    if configured_name in project_configs and any(k.lower().replace(" ", "_") in sample for k in keywords):
+                        project = configured_name
+                        break
         except OSError:
             pass
 
-    # Existing legacy submissions under the participant structure belong to Loan Default
-    # only when the notebook itself or parent path indicates that project.
+    # Preserve the old participant/Milestone_N layout for existing Loan Default submissions.
     if project is None and path.parts and path.parts[0].lower() == "submission":
-        # Backward compatibility: the original participant/Milestone_N layout is Loan Default
-        # unless another project is explicitly identified in the notebook content.
         default_project = config.get("default_project", "Loan_Default")
         if default_project in project_configs:
             project = default_project
 
     if project is None:
         raise ValueError(
-            f"Cannot identify project for '{path}'. Put a project keyword/title in the filename "
-            "or notebook content. The evaluator will not silently assign the wrong project."
+            f"Cannot identify project for '{path}'. Add a project-specific folder name or include "
+            "the exact project title in the notebook. No report row will be created with a guessed project."
         )
 
     milestone = None
@@ -61,7 +72,7 @@ def choose_project_milestone(path, config):
             milestone = f"Milestone_{i}"
             break
     if milestone is None:
-        raise ValueError(f"Cannot identify milestone for '{path}'. Expected Milestone_1.ipynb through Milestone_4.ipynb.")
+        raise ValueError(f"Cannot identify milestone for '{path}'. Use a Milestone_1 through Milestone_4 filename or folder.")
 
     if milestone not in project_configs[project].get("rubrics", {}):
         raise ValueError(f"No rubric configured for {project}/{milestone} in evaluator/config.json")
