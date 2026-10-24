@@ -1,0 +1,32 @@
+{
+  "project_id": "Healthcare_Liver_Disease",
+  "milestone_id": "Milestone_4",
+  "total_marks": 100,
+  "criteria": [
+    {
+      "name": "LLM Explanations & Prompt Engineering",
+      "max_marks": 20,
+      "guidance": "Generate cautious, evidence-grounded explanations; clearly distinguish dataset associations from diagnosis or treatment advice."
+    },
+    {
+      "name": "RAG: Ingestion/Retrieval/Grounding",
+      "max_marks": 20,
+      "guidance": "Retrieve from approved healthcare education sources with traceable citations and abstain when evidence is missing."
+    },
+    {
+      "name": "Text-to-SQL & Query Safety",
+      "max_marks": 20,
+      "guidance": "Generate schema-constrained read-only queries, reject unsafe SQL and minimize sensitive patient data exposure."
+    },
+    {
+      "name": "AI Agent Orchestration",
+      "max_marks": 20,
+      "guidance": "Coordinate retrieval, data-query and summarization tools with clear routing and error handling."
+    },
+    {
+      "name": "Evaluation & Responsible AI",
+      "max_marks": 20,
+      "guidance": "Evaluate grounding, privacy, fairness, uncertainty and unsafe clinical claims; require human clinical review for clinical decisions."
+    }
+  ]
+}
