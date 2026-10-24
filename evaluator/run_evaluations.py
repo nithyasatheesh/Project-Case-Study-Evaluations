@@ -11,7 +11,7 @@ def choose_project_milestone(path, config):
         (('retail_purchase', 'retail_customer_purchase', 'customer purchase intelligence', 'user_product_purchase_details'), 'Retail_Customer_Purchase'),
         (('healthcare', 'liver_disease', 'liver disease', 'liver patient dataset'), 'Healthcare_Liver_Disease'),
         (('forecasting', 'sales_forecasting', 'retail sales forecasting', 'retail_data.csv'), 'Retail_Sales_Forecasting'),
-        (('loan_default', 'loandefault'), 'Loan_Default'),
+        (('loan_default', 'loandefault', 'loan default', 'default prediction'), 'Loan_Default'),
     ]
     project = None
     for keywords, configured_name in aliases:
